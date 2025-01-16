@@ -1,0 +1,68 @@
+h1{
+    text-align:center;
+	font-weight: bold;
+}
+ body {
+  font-family: Arial, sans-serif;
+  background-color:#3cb184b3;
+  display: flex;
+  justify-content: center;
+}
+.outer{
+	display:flex;
+	align-items:center;
+	display:block;
+	padding:20px;
+	background-color:white;
+	width:450px;
+	border-radius:49px;
+    box-shadow: 0 20px 20px rgba(80, 79, 79, 0.915);
+}
+label{
+	display:block;
+}
+.input-group{
+	font-weight:bold;
+	padding-right:55px;
+	padding-left:45px;
+	margin:3px;
+	font-style:italic;
+	
+}
+
+button {
+    display: block;
+    margin: 25px auto; /* Center the button */
+    background-color: blue;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px; /* Adjust font size for responsiveness */
+    font-weight: bold;
+    width: 60%; /* Relative size */
+    color: white;
+    cursor: pointer;
+    border: none; /* Added for cleaner look */
+}
+input {
+  width: 100%;
+  padding: 9px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin:5px;
+  background-color: white;
+  cursor:pointer;
+  
+}
+.input-group .error{
+	color:red;
+	text-align: center;
+	text-align:center;
+}
+.input-group.success input{
+	border-color:green;
+}
+.input-group.error input{
+	border-color:red;
+	text-align:center;
+}
+

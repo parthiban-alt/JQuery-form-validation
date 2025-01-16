@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link href="form.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="outer">
+    <form id="form" autocomplete="off">
+        <h1>Register</h1>
+      <div class="input-group">
+        <label>User Name</label>
+        <input type="text" id="username" name="username" autofocus placeholder="Enter your name">
+          <div class="error"></div>
+      </div>
+      <div class="input-group">
+        <label>Mobile</label>
+        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number">
+          <div class="error"></div>
+      </div>
+      <div class="input-group">
+        <label>Date of Birth</label>
+        <input type="date" id="dob" name="dob" >
+          <div class="error"></div>
+      </div>
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+          <div class="error"></div>
+      </div>
+      
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" id="password" name="password"  placeholder="Enter password">
+        <div class="error"></div>
+      </div>
+      <div class="input-group">
+        <label>Confirm Password</label>
+        <input type="password" id="cpassword" name="cpassword"   placeholder="Enter confirm password">
+        <div class="error"></div>
+      </div>
+        <button type="submit"  >Register</button>
+    </form>
+  </div>
+  <script src="jquery-validation-1.19.5/jquery.js"></script>
+  <script src="jquery-validation-1.19.5/jquery.validate.js"></script>
+  <script>
+    $(document).ready(function(){
+          $.validator.setDefaults({
+            submitHandler:function() {
+              alert("submitted!");
+            }
+          });
+
+          $("#form").validate({
+            rules:{
+                username:"required",
+                dob:"required",
+                email:{
+                  required:true,
+                  email:true
+                },
+                password:{
+                  required:true,
+                  minlength:8
+                },
+                cpassword:{
+                  required:true,
+                  minlength:8,
+                  equalTo:"#password"
+                },
+                mobile:{
+                  required:true,
+                  digits:true,
+                  maxlength:10,
+                  minlength:10
+                }
+              },
+            messages:{
+              username:"Please Enter Your name",
+              dob:"Please Enter Your D.O.B",
+              email:{
+                required:"Please Enter Your email ID",
+                email:"Please Enter Your valid email ID"
+              },
+              password:{
+                required:"Please Enter Your password",
+                minlength:"Password must be 8 characters"
+              },
+              cpassword:{
+                 required:"Please Enter Your cpassword",
+                minlength:"Password must be 8 characters",
+                equalTo:"Mismatch Password"
+              },
+              mobile:{
+                required:"Please Enter Your mobile number",
+                digits:"Mobile number must be numeric",
+                minlength:"minimum length must be 10",
+                maxlength:"maximum length must be 10 "
+              }
+            }
+          });
+    });
+  </script>
+</body>
+
+</html>
+
